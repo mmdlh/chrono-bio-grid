@@ -1,24 +1,20 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { BioEnergyPlatform } from "@/components/BioEnergyPlatform";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "生物能管平台｜全域能源运营中心" },
+      { name: "description", content: "覆盖能源生产、原料、碳效、设备与经营的一体化生物能源管理平台。" },
+      { property: "og:title", content: "生物能管平台｜全域能源运营中心" },
+      { property: "og:description", content: "实时洞察生物能源全链路运行与绿色价值。" },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
+  return <BioEnergyPlatform />;
 }
