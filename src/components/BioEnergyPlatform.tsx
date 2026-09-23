@@ -159,7 +159,7 @@ function Overview() {
     </GlassPanel>
     <GlassPanel title="核心站点态势" subtitle="按实时贡献率排序" className="lg:col-span-7">
       <div className="site-list">
-        {[['华东一号综合能源站','31.8 MW','96%','运行'],['南岭农林循环中心','27.4 MW','89%','运行'],['江北沼气示范站','19.6 MW','78%','调峰'],['滨湖生物质热电厂','17.1 MW','67%','关注']].map((r, i) => <div className="site-row" key={r[0]}><span className="rank">0{i+1}</span><div><strong>{r[0]}</strong><small>{r[1]}</small></div><div className="progress-track"><span style={{ width: r[2] }} /></div><StatusPill status={r[3]} tone={i === 3 ? "warn" : i === 2 ? "info" : "ok"} /></div>)}
+        {([['华东一号综合能源站','31.8 MW','96%','运行'],['南岭农林循环中心','27.4 MW','89%','运行'],['江北沼气示范站','19.6 MW','78%','调峰'],['滨湖生物质热电厂','17.1 MW','67%','关注']] as [string, string, string, string][]).map((r, i) => <div className="site-row" key={r[0]}><span className="rank">0{i+1}</span><div><strong>{r[0]}</strong><small>{r[1]}</small></div><div className="progress-track"><span style={{ width: r[2] }} /></div><StatusPill status={r[3]} tone={i === 3 ? "warn" : i === 2 ? "info" : "ok"} /></div>)}
       </div>
     </GlassPanel>
     <GlassPanel title="实时告警" subtitle="全网事件流" className="lg:col-span-5">
