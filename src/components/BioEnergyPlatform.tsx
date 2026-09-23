@@ -56,7 +56,7 @@ const pageInfo: Record<ViewKey, { eyebrow: string; title: string; summary: strin
 };
 
 function Chart({ option, className = "h-72" }: ChartProps) {
-  return <ReactECharts option={{ animationDuration: 900, color: chartColors, ...option }} className={className} style={{ height: "100%", width: "100%" }} opts={{ renderer: "canvas" }} />;
+  return <EChart option={{ animationDuration: 900, color: chartColors, ...option }} className={className} />;
 }
 
 function GlassPanel({ title, subtitle, action, className, children }: { title: string; subtitle?: string; action?: ReactNode; className?: string; children: ReactNode }) {
