@@ -1,5 +1,5 @@
 import { useMemo, useState, type ReactNode } from "react";
-import ReactECharts from "echarts-for-react";
+import { EChart } from "@/components/EChart";
 import {
   Activity,
   BellRing,
