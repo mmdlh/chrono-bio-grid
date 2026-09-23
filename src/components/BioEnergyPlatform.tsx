@@ -70,7 +70,7 @@ function GlassPanel({ title, subtitle, action, className, children }: { title: s
         </div>
         {action}
       </header>
-      <div className="relative z-10">{children}</div>
+      <div className="relative z-10 flex-1 min-h-0">{children}</div>
     </section>
   );
 }
